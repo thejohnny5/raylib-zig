@@ -2169,7 +2169,7 @@ pub fn textFormat(text: [*:0]const u8, args: anytype) [*:0]const u8 {
     comptime {
         const info = @typeInfo(@TypeOf(args));
         switch (info) {
-            .Struct => {
+            .@"struct" => {
                 if (!info.Struct.is_tuple)
                     @compileError("Args should be in a tuple (call this function like textFormat(.{arg1, arg2, ...});)!");
             },
